@@ -14,3 +14,4 @@ const atacarInimigo = () => {
 const retornaNumeroAleatorio = () => {
     return Math.floor(Math.random() * 11);
 }
+
