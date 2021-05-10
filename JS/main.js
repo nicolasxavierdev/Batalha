@@ -4,7 +4,7 @@ let energiaInimigo = 100;
 const atacarHeroi = () => {
     energiaHeroi = energiaHeroi - retornaNumeroAleatorio();
 
-    document.getElementById('energiaH').innerHTML = energiaHeroi;
+    document.getElementById('energiaI').innerHTML = energiaHeroi;
 
     if (energiaHeroi <= 0) {
         alert('fim de jogo, Inimigo venceu.')
@@ -14,7 +14,7 @@ const atacarHeroi = () => {
 const atacarInimigo = () => {
     energiaInimigo = energiaInimigo - retornaNumeroAleatorio();
 
-    document.getElementById('energiaI').innerHTML = energiaInimigo;
+    document.getElementById('energiaH').innerHTML = energiaInimigo;
 
     if (energiaInimigo <= 0) {
         alert('fim de jogo, Herói venceu.')
