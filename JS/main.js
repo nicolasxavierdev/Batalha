@@ -44,7 +44,7 @@ const reiniciar = () => {
     }
 
 
-/* const atacarHero = () => {
+const atacarHero = () => {
     smilleI.innerHTML = ':-('
 
     setTimeout(() => {
@@ -58,4 +58,4 @@ const atacarInimig = () => {
     setTimeout(() => {
         smilleH.innerHTML = ':-)'
     }, 500)
-} */
+}
