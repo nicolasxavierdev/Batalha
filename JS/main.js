@@ -1,5 +1,5 @@
 let energiaHeroi = 100;
-let energiaInimigo = 100;
+let energiaInimigo = 100; 
 let energiaIni = document.getElementById('energiaI')
 let energiaHer = document.getElementById('energiaH')
 
@@ -11,6 +11,7 @@ const atacarHeroi = () => {
     if (energiaHeroi <= 0) {
         alert('fim de jogo, Inimigo venceu.')
         desabitaBotao()
+        reiniciar()
     }
 }
 
@@ -22,6 +23,7 @@ const atacarInimigo = () => {
     if (energiaInimigo <= 0) {
         alert('fim de jogo, Herói venceu.')
         desabitaBotao()
+        reiniciar()
     }
 }
 
@@ -32,4 +34,11 @@ const retornaNumeroAleatorio = () => {
 const desabitaBotao = () => {
     document.getElementById('bI').disabled = true;
     document.getElementById('bH').disabled = true;
+}
+
+const reiniciar = () => {
+    if (energiaInimigo <= 0 || energiaHeroi <= 0) {
+
+        setTimeout(() => location.reload(), 2000);
+    }
 }
