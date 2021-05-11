@@ -1,5 +1,7 @@
 let energiaHeroi = 100;
-let energiaInimigo = 100; 
+let energiaInimigo = 100;
+let smilleH = document.getElementById('smilleHe')
+let smilleI = document.getElementById('smilleIn')
 let energiaIni = document.getElementById('energiaI')
 let energiaHer = document.getElementById('energiaH')
 
@@ -11,8 +13,8 @@ const atacarHeroi = () => {
     if (energiaHeroi <= 0) {
         alert('fim de jogo, Inimigo venceu.')
         desabitaBotao()
-        reiniciar()
     }
+    atacarInimig()
 }
 
 const atacarInimigo = () => {
@@ -23,8 +25,8 @@ const atacarInimigo = () => {
     if (energiaInimigo <= 0) {
         alert('fim de jogo, Herói venceu.')
         desabitaBotao()
-        reiniciar()
     }
+    atacarHero()
 }
 
 const retornaNumeroAleatorio = () => {
@@ -37,8 +39,23 @@ const desabitaBotao = () => {
 }
 
 const reiniciar = () => {
-    if (energiaInimigo <= 0 || energiaHeroi <= 0) {
 
-        setTimeout(() => location.reload(), 2000);
+        location.reload()
     }
+
+
+/* const atacarHero = () => {
+    smilleI.innerHTML = ':-('
+
+    setTimeout(() => {
+        smilleI.innerHTML = ':-)'
+    }, 500)
 }
+
+const atacarInimig = () => {
+    smilleH.innerHTML = ':-('
+
+    setTimeout(() => {
+        smilleH.innerHTML = ':-)'
+    }, 500)
+} */
