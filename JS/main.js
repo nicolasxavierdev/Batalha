@@ -4,29 +4,31 @@ let smilleH = document.getElementById('smilleHe')
 let smilleI = document.getElementById('smilleIn')
 let energiaIni = document.getElementById('energiaI')
 let energiaHer = document.getElementById('energiaH')
+let areaInimigo = document.querySelector('.area-inimigo')
+let areaHeroi = document.querySelector('.area-heroi')
 
 const atacarHeroi = () => {
     energiaHeroi = energiaHeroi - retornaNumeroAleatorio();
-
     energiaIni.innerHTML = energiaHeroi;
+
+    alteraSmille('inimigo')
 
     if (energiaHeroi <= 0) {
         alert('fim de jogo, Inimigo venceu.')
         desabitaBotao()
     }
-    atacarInimig()
 }
 
 const atacarInimigo = () => {
     energiaInimigo = energiaInimigo - retornaNumeroAleatorio();
-
     energiaHer.innerHTML = energiaInimigo;
+
+    alteraSmille('heroi')
 
     if (energiaInimigo <= 0) {
         alert('fim de jogo, Herói venceu.')
         desabitaBotao()
     }
-    atacarHero()
 }
 
 const retornaNumeroAleatorio = () => {
@@ -39,23 +41,26 @@ const desabitaBotao = () => {
 }
 
 const reiniciar = () => {
-
-        location.reload()
-    }
-
-
-const atacarHero = () => {
-    smilleI.innerHTML = ':-('
-
-    setTimeout(() => {
-        smilleI.innerHTML = ':-)'
-    }, 500)
+    location.reload()
 }
 
-const atacarInimig = () => {
-    smilleH.innerHTML = ':-('
+const alteraSmille = (personagem) => {
+    if (personagem == 'heroi') {
+        smilleI.innerHTML = ':-('
+        areaInimigo.classList.add('atingido')
+    
+        setTimeout(() => {
+            smilleI.innerHTML = ':-)'
+            areaInimigo.classList.remove('atingido')
+        }, 500)
+    }
 
-    setTimeout(() => {
-        smilleH.innerHTML = ':-)'
-    }, 500)
+    if (personagem == 'inimigo') {
+        smilleH.innerHTML = ':-('
+        areaHeroi.classList.add('atingido')
+        setTimeout(() => {
+            smilleH.innerHTML = ':-)'
+            areaHeroi.classList.remove('atingido')
+        }, 500)
+    }
 }

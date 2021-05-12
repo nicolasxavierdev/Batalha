@@ -24,3 +24,8 @@ h4 {
 #smilleHe, #smilleIn {
     font-size: 50px;
 }
+
+.atingido {
+    border-color: red;
+    background-color: rgb(248, 39, 39);
+}
