@@ -7,6 +7,12 @@ let energiaHer = document.getElementById('energiaH')
 let areaInimigo = document.querySelector('.area-inimigo')
 let areaHeroi = document.querySelector('.area-heroi')
 
+let lista = []
+    lista.push('heroi')
+
+    console.log(lista);
+
+
 const atacarHeroi = () => {
     energiaHeroi = energiaHeroi - retornaNumeroAleatorio();
     energiaIni.innerHTML = energiaHeroi;
@@ -48,7 +54,7 @@ const alteraSmille = (personagem) => {
     if (personagem == 'heroi') {
         smilleI.innerHTML = ':-('
         areaInimigo.classList.add('atingido')
-    
+
         setTimeout(() => {
             smilleI.innerHTML = ':-)'
             areaInimigo.classList.remove('atingido')
