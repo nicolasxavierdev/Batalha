@@ -7,11 +7,7 @@ let energiaHer = document.getElementById('energiaH')
 let areaInimigo = document.querySelector('.area-inimigo')
 let areaHeroi = document.querySelector('.area-heroi')
 
-let lista = []
-    lista.push('heroi')
-
-    console.log(lista);
-
+let listaPlacar = []
 
 const atacarHeroi = () => {
     energiaHeroi = energiaHeroi - retornaNumeroAleatorio();
@@ -20,8 +16,11 @@ const atacarHeroi = () => {
     alteraSmille('inimigo')
 
     if (energiaHeroi <= 0) {
-        alert('fim de jogo, Inimigo venceu.')
-        desabitaBotao()
+        alert('fim da rodada, Inimigo venceu.')
+        listaPlacar.push('inimigo')
+        reiniciaPartida()
+        console.log(listaPlacar);
+        //desabitaBotao()
     }
 }
 
@@ -32,8 +31,11 @@ const atacarInimigo = () => {
     alteraSmille('heroi')
 
     if (energiaInimigo <= 0) {
-        alert('fim de jogo, Herói venceu.')
-        desabitaBotao()
+        alert('fim da rodada, Herói venceu.')
+        listaPlacar.push('heroi')
+        reiniciaPartida()
+        console.log(listaPlacar);
+        //desabitaBotao()
     }
 }
 
@@ -69,4 +71,11 @@ const alteraSmille = (personagem) => {
             areaHeroi.classList.remove('atingido')
         }, 500)
     }
+}
+
+const reiniciaPartida = () => {
+    energiaHeroi = 100;
+    energiaInimigo = 100;
+    energiaIni.innerHTML = energiaHeroi;
+    energiaHer.innerHTML = energiaInimigo;
 }
