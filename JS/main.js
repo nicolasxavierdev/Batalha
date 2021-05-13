@@ -20,7 +20,10 @@ const atacarHeroi = () => {
         listaPlacar.push('inimigo')
         reiniciaPartida()
         console.log(listaPlacar);
-        //desabitaBotao()
+
+        if (listaPlacar.length == 3) {
+             desabitaBotao()
+        }
     }
 }
 
@@ -35,7 +38,10 @@ const atacarInimigo = () => {
         listaPlacar.push('heroi')
         reiniciaPartida()
         console.log(listaPlacar);
-        //desabitaBotao()
+
+        if (listaPlacar.length == 3) {
+            desabitaBotao()
+        }
     }
 }
 
