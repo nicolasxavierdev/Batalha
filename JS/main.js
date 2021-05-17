@@ -6,6 +6,7 @@ let energiaIni = document.getElementById('energiaI')
 let energiaHer = document.getElementById('energiaH')
 let areaInimigo = document.querySelector('.area-inimigo')
 let areaHeroi = document.querySelector('.area-heroi')
+let lista = document.getElementById('lista')
 
 let listaPlacar = []
 
@@ -18,11 +19,11 @@ const atacarHeroi = () => {
     if (energiaHeroi <= 0) {
         alert('fim da rodada, Inimigo venceu.')
         listaPlacar.push('inimigo')
+        vencedor()
         reiniciaPartida()
-        console.log(listaPlacar);
 
         if (listaPlacar.length == 3) {
-             desabitaBotao()
+            desabitaBotao()
         }
     }
 }
@@ -36,8 +37,8 @@ const atacarInimigo = () => {
     if (energiaInimigo <= 0) {
         alert('fim da rodada, Herói venceu.')
         listaPlacar.push('heroi')
+        vencedor()
         reiniciaPartida()
-        console.log(listaPlacar);
 
         if (listaPlacar.length == 3) {
             desabitaBotao()
@@ -84,4 +85,18 @@ const reiniciaPartida = () => {
     energiaInimigo = 100;
     energiaIni.innerHTML = energiaHeroi;
     energiaHer.innerHTML = energiaInimigo;
+}
+
+const vencedor = () => {
+    
+    lista.innerHTML = "";
+
+    listaPlacar.forEach((item) => {
+        
+        lista.innerHTML += `
+        <ul>
+        <li>${item.listaPlacar}</li>
+        </ul>` 
+    });
+
 }
