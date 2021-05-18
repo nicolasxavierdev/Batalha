@@ -19,7 +19,7 @@ const atacarHeroi = () => {
     if (energiaHeroi <= 0) {
         alert('fim da rodada, Inimigo venceu.')
         listaPlacar.push('inimigo')
-        vencedor()
+        mostrarvencedor()
         reiniciaPartida()
 
         if (listaPlacar.length == 3) {
@@ -37,7 +37,7 @@ const atacarInimigo = () => {
     if (energiaInimigo <= 0) {
         alert('fim da rodada, Herói venceu.')
         listaPlacar.push('heroi')
-        vencedor()
+        mostrarvencedor()
         reiniciaPartida()
 
         if (listaPlacar.length == 3) {
@@ -87,16 +87,15 @@ const reiniciaPartida = () => {
     energiaHer.innerHTML = energiaInimigo;
 }
 
-const vencedor = () => {
-    
+const mostrarvencedor = () => {
+
     lista.innerHTML = "";
 
-    listaPlacar.forEach((item) => {
-        
+    listaPlacar.forEach((personagem) => {
+
         lista.innerHTML += `
-        <ul>
-        <li>${item.listaPlacar}</li>
-        </ul>` 
+        <li>${personagem}</li>
+        `
     });
 
 }
